@@ -1,0 +1,11 @@
+{% extends "base/base.html" %} {% load widget_tweaks %}  {% load static %}
+{% block content %}
+    <div>
+        <h2>{{ object.title }}</h2>
+        <p>{{ object.content }}</p>
+        <p>{{ object.author.get_full_name|default:object.author.username }}</p>
+        <p>{{ object.publication }}</p>
+    </div>
+    <br>
+    <a href="{% url 'post:index'%}" class="btn btn-primary">Articles List</a>
+{% endblock %}
